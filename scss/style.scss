@@ -1,0 +1,276 @@
+@import 'variables';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a:link {
+    text-decoration: none;
+    color: $bg-primay;
+}
+
+header {
+    nav {
+        img {
+            height: 40px;
+        }
+
+        ul {
+            a {
+                color: $bg-primay !important;
+            }
+        }
+    }
+
+    .section-carousel {
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $layer-slider;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 50px;
+            font-weight: bolder;
+        }
+
+        .img-container {
+            height: 90vh;
+            width: 100vw;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .content-text-carousel {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: $bg-primay;
+            z-index: 1;
+        }
+    }
+}
+
+#main {
+    .description-business {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .video {
+        width: 100%;
+        height: 17em;
+        background-image: url("../assets/images/banner-1-video.webp");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        svg {
+            transform: scale(5);
+        }
+
+        &:hover {
+            color: #FDE231;
+            cursor: pointer;
+        }
+    }
+
+    .section-brand {
+        background-color: $bg-list;
+
+        img {
+            width: 100%;
+            height: 100px;
+
+            &:hover {
+                background-color: $bg-primay;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+        }
+    }
+
+    .section-card-car {
+        .card {
+            &:nth-child(odd) {
+                background-color: $bg-secondary;
+                padding: 0.5em;
+                color: $bg-primay;
+            }
+
+            &:nth-child(even) {
+                background-color: $bg-warn;
+                padding: 0.5em;
+            }
+
+            img {
+                border-radius: 5px;
+                height: 10em;
+            }
+        }
+
+    }
+
+    .row-gallery {
+        padding: 1em 0;
+
+        &:nth-child(2n) {
+            background-color: $bg-list;
+            margin: 0;
+            color: $bg-primay;
+        }
+    }
+    .btn-location {
+        width: 100%;
+    }
+
+}
+
+footer {
+    padding: 1em 5em 1em 5em;
+    background-color: $bg-dark;
+    color: $bg-primay;
+
+    h4 {
+        color: $bg-secondary;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+
+        svg {
+            margin-left: 10px;
+            color: $bg-primay;
+
+            &:hover {
+                color: $bg-warn;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .copy {
+        margin-top: 1em;
+    }
+}
+
+// se puede usar a nivel general, con los mismos estilos
+
+.target {
+    @include target($bg-dark, $bg-secondary);
+}
+
+.btn {
+    z-index: 1;
+    @include btn-style($bg-secondary, $bg-primay, auto);
+
+    &:hover {
+        color: $bg-secondary;
+        background-color: $bg-primay;
+    }
+}
+
+small {
+    color: #222221;
+}
+
+td {
+    padding: 2em !important;
+}
+
+fieldset {
+
+    div {
+        margin-bottom: 1em;
+    }
+}
+
+////////////////////////////////////////////////
+
+@media only screen and (max-width: 765px) {
+    .info-footer {
+        border-bottom: none !important;
+    }
+
+    .scroll {
+        overflow: scroll;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .img-container {
+        height: 60vh !important;
+    }
+
+    .section-brand {
+        img {
+            width: 10em;
+            height: 100px;
+            padding: 1em;
+        }
+    }
+
+    table {
+        overflow: scroll;
+    }
+
+    .section-carousel {
+        p {
+            font-size: 15px !important;
+        }
+
+        h2 {
+            font-size: 25px !important;
+            font-weight: bolder;
+        }
+    }
+}
+
+@media only screen and (max-width: 367px) {
+    .section-carousel {
+        p {
+            font-size: 15px !important;
+        }
+
+        h2 {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    footer {
+        display: flex;
+        justify-content: center;
+    }
+}

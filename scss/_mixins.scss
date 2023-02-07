@@ -1,0 +1,31 @@
+@mixin btn-style($background, $bg-primary, $width){
+    background-color: $background;
+    padding: 1em;
+    color: $bg-primary;
+    font-weight: bold;
+    width: $width;
+}
+
+@mixin target($shadow, $border){
+    margin-top: 1em;
+    padding: 30px 53px;
+    border-bottom: 2px solid $border;
+    box-shadow: 0px 0px 5px 1px $shadow;
+    .header-target {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5em;
+    }
+
+    h3 {
+        margin: 0;
+        margin-left: 10px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    p {
+        margin: 0;
+    }
+}
